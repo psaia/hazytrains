@@ -10,7 +10,10 @@
 		/>
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black"
+		/>
 		<meta name="theme-color" content="#000000" />
 		<style>
 			html,
@@ -127,23 +130,26 @@
 					border-width: 2px;
 					border-radius: 6px;
 				}
-				
+
 				.row {
 					font-size: clamp(14px, 4vw, 18px);
 				}
-				
+
 				.times {
 					font-size: clamp(13px, 3.5vw, 16px);
 				}
 			}
-			
+
 			/* Prevent zoom on focus for iOS */
 			@media (max-width: 768px) {
-				select, textarea, input, button {
+				select,
+				textarea,
+				input,
+				button {
 					font-size: 16px !important;
 				}
 			}
-			
+
 			/* Better touch targets */
 			@media (hover: none) and (pointer: coarse) {
 				.screen {
@@ -167,7 +173,7 @@
 				<span id="south" class="times">—</span>
 			</div>
 
-			<div class="footer">G TRAIN · LIVE</div>
+			<div class="footer">G TRAIN · LIVE · FOR HAZE ❤️</div>
 		</div>
 
 		<script>
@@ -188,17 +194,24 @@
 				"MENACE WALK HAZE",
 				"FERAL SPEED HAZE",
 				"ABSURD MODE HAZE",
-				"CHAOS FOREVER HAZE"
+				"CHAOS FOREVER HAZE",
 			];
-			
+
 			function updateHeader() {
-				const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-				document.getElementById("header").textContent = randomMessage;
+				const randomMessage =
+					messages[
+						Math.floor(
+							Math.random() *
+								messages.length,
+						)
+					];
+				document.getElementById("header").textContent =
+					randomMessage;
 			}
-			
+
 			// Set initial message
 			updateHeader();
-			
+
 			// Update message every 10 seconds
 			setInterval(updateHeader, 10000);
 		</script>
