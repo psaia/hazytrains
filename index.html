@@ -171,7 +171,7 @@
 		</div>
 
 		<script>
-			// Set random header message on page load
+			// Rotate random header messages
 			const messages = [
 				"CHAOS MODE HAZE",
 				"GO FERAL HAZE",
@@ -191,8 +191,16 @@
 				"CHAOS FOREVER HAZE"
 			];
 			
-			const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-			document.getElementById("header").textContent = randomMessage;
+			function updateHeader() {
+				const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+				document.getElementById("header").textContent = randomMessage;
+			}
+			
+			// Set initial message
+			updateHeader();
+			
+			// Update message every 10 seconds
+			setInterval(updateHeader, 10000);
 		</script>
 
 		<script type="module">
